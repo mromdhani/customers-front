@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from 'src/app/services/search.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
+  data: string = '';
+
   isMenuCollapsed : boolean = false;
 
-  constructor() { }
+  constructor(private _service: SearchService) { }
 
   ngOnInit(): void {
+  }
+
+  envoyerChangements() {
+    this._service.changeMessage(this.data);
   }
 
 }

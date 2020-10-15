@@ -1,4 +1,17 @@
-<h1>List of all the Customers</h1>
-<li *ngFor="let item of data"> {{item.firstName}}  - {{item.lastName}}</li>
+<div class="row">
+  <div class="card align-items-center"  style="width:400px; margin: 5px"
+        *ngFor='let customer of data'>
+
+       <div class="card-body text-center">
+        <h2 class="card-title">{{ customer.lastName }}</h2>
+
+         <h4 class="card-text">{{ customer.firstName}}</h4>
+         <a class="btn btn-primary" >   Show Details  </a>
+       </div>
+    </div>
+</div>
+
+
+
 
 
